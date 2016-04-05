@@ -7,12 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
 
-import net.sf.json.JSONObject;
 
 
 
@@ -27,12 +28,12 @@ public class ExceptionHandler extends AbstractHandlerExceptionResolver {
 		response.setCharacterEncoding("UTF-8");
 		 response.setHeader("Cache-Control","no-cache, must-revalidate");
 		 try {
-			 JSONObject json = new JSONObject();
-			 json.put("success", false);
-			 json.put("errmsg", ex.getMessage());
-			 response.getWriter().write(json.toString());
+		        ObjectMapper mapper = new ObjectMapper();  
+		        ErrorMessge errorMessge = new ErrorMessge();
+		        errorMessge.setMsg(ex.getMessage());
+		        response.getWriter().write(mapper.writeValueAsString(errorMessge));
 			  } catch (IOException e) {
-			  throw new RuntimeException(e);
+				  throw new RuntimeException(e);
 			 }
 		return null;
 	}

@@ -25,7 +25,7 @@ public class RealNameAuthController {
 			task.setTaskId("1");
 			task.setTaskName("测试任务");
 			if (true){
-				throw new RuntimeException("主动出发一个异常");
+				//throw new RuntimeException("主动出发一个异常");
 			}
 			return task;
 	}

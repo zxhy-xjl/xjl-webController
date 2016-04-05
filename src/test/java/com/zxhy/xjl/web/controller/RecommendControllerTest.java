@@ -1,5 +1,6 @@
 package com.zxhy.xjl.web.controller;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,9 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,14 +42,16 @@ public class RecommendControllerTest extends BaseControllerTest{
 	}
 	
 	@Test
-	public void register() {
+	public void register() throws JsonGenerationException, JsonMappingException, IOException {
 		String uri = "/register";
 		RealNameAuthTask task =new RealNameAuthTask();
 		task.setPhone("234");
 		task.setProcessName("测试用户");
 		task.setTaskId("1");
 		task.setTaskName("测试任务");
-		String resp = this.mockPost(uri, "{phone:123,taskId:2}");
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String resp = this.mockPost(uri,mapper.writeValueAsString(task) );
 		System.out.println("register:" + resp);
 	}
 }
