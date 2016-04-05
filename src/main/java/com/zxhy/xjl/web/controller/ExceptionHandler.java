@@ -1,0 +1,40 @@
+package com.zxhy.xjl.web.controller;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
+
+import net.sf.json.JSONObject;
+
+
+
+public class ExceptionHandler extends AbstractHandlerExceptionResolver {
+	private static Log log = LogFactory.getLog(ExceptionHandler.class);
+	@Override
+	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
+			Exception ex) {
+		System.out.println("异常发生");
+		response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+		response.setCharacterEncoding("UTF-8");
+		 response.setHeader("Cache-Control","no-cache, must-revalidate");
+		 try {
+			 JSONObject json = new JSONObject();
+			 json.put("success", false);
+			 json.put("errmsg", ex.getMessage());
+			 response.getWriter().write(json.toString());
+			  } catch (IOException e) {
+			  throw new RuntimeException(e);
+			 }
+		return null;
+	}
+	
+}
