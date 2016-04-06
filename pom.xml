@@ -112,7 +112,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>xjl-webController</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
