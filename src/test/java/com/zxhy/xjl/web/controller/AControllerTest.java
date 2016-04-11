@@ -30,7 +30,7 @@ public class AControllerTest extends BaseControllerTest{
 	@Autowired
 	private AController controller;
 	@Override
-	Object getController() {
+	public Object getController() {
 		return this.controller;
 	}
 	

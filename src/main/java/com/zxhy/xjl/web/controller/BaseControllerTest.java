@@ -65,5 +65,5 @@ public abstract class BaseControllerTest   {
 				throw new RuntimeException(e);
 			}
     }  
-	abstract Object getController();
+	public abstract Object getController();
 }
