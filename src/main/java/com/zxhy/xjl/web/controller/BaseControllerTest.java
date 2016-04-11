@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.ModelAndView;
 
 
-@ContextConfiguration(locations = { "classpath:ApplicationContext-controller.xml"})  
+@ContextConfiguration(locations = { "classpath*:/ApplicationContext-*.xml"})  
 @RunWith(SpringJUnit4ClassRunner.class)  
 public abstract class BaseControllerTest   {
 	MockHttpServletRequest request = new MockHttpServletRequest();  
