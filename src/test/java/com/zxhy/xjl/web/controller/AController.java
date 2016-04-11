@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-public class RealNameAuthController {
-	private static final Log log = LogFactory.getLog(RealNameAuthController.class);
+public class AController {
+	private static final Log log = LogFactory.getLog(AController.class);
 	@ResponseBody
 	@RequestMapping(value="/task/{taskId}", method=RequestMethod.GET)
-	public RealNameAuthTask logon(@PathVariable String taskId){
+	public AModel logon(@PathVariable String taskId){
 		log.debug("logon taskId:" + taskId);
-			RealNameAuthTask task =new RealNameAuthTask();
+			AModel task =new AModel();
 			task.setPhone("234");
 			task.setProcessName("测试用户");
 			task.setTaskId("1");
@@ -31,7 +31,7 @@ public class RealNameAuthController {
 	}
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public void register(@RequestBody RealNameAuthTask task){
+	public void register(@RequestBody AModel task){
 		log.debug("register:" +task.getPhone());
 	}
 }

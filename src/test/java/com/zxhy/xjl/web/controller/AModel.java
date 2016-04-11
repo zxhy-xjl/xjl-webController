@@ -1,6 +1,6 @@
 package com.zxhy.xjl.web.controller;
 
-public class RealNameAuthTask {
+public class AModel {
 	private String taskId;
 	private String phone;
 	private String processName;

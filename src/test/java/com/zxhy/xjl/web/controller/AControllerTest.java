@@ -25,10 +25,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.context.WebApplicationContext;
 
 
-public class RecommendControllerTest extends BaseControllerTest{
-	private static Log log = LogFactory.getLog(RecommendControllerTest.class);
+public class AControllerTest extends BaseControllerTest{
+	private static Log log = LogFactory.getLog(AControllerTest.class);
 	@Autowired
-	private RealNameAuthController controller;
+	private AController controller;
 	@Override
 	Object getController() {
 		return this.controller;
@@ -44,7 +44,7 @@ public class RecommendControllerTest extends BaseControllerTest{
 	@Test
 	public void register() throws JsonGenerationException, JsonMappingException, IOException {
 		String uri = "/register";
-		RealNameAuthTask task =new RealNameAuthTask();
+		AModel task =new AModel();
 		task.setPhone("234");
 		task.setProcessName("测试用户");
 		task.setTaskId("1");
