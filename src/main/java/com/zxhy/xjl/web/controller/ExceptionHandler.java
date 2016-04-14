@@ -22,7 +22,7 @@ public class ExceptionHandler extends AbstractHandlerExceptionResolver {
 	@Override
 	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception ex) {
-		System.out.println("异常发生");
+		 log.debug("执行controller有异常发生");
 		response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 		response.setCharacterEncoding("UTF-8");
@@ -31,6 +31,8 @@ public class ExceptionHandler extends AbstractHandlerExceptionResolver {
 		        ObjectMapper mapper = new ObjectMapper();  
 		        ErrorMessge errorMessge = new ErrorMessge();
 		        errorMessge.setMsg(ex.getMessage());
+		        log.debug("errorMessage:" + errorMessge.getMsg());
+		        log.debug("mapper.asString:" + mapper.writeValueAsString(errorMessge));
 		        response.getWriter().write(mapper.writeValueAsString(errorMessge));
 			  } catch (IOException e) {
 				  throw new RuntimeException(e);
