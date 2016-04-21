@@ -54,11 +54,12 @@ public abstract class BaseControllerTest   {
 			builder.content(json);
 		}
 			try {
-				Exception e = mvc.perform(builder).andReturn().getResolvedException();
+				MvcResult result = mvc.perform(builder).andReturn();
+				Exception e = result.getResolvedException();
 				if (e!=null){
 					throw new RuntimeException(e);
 				}
-				return mvc.perform(builder).andReturn().getResponse().getContentAsString();
+				return result.getResponse().getContentAsString();
 			} catch (UnsupportedEncodingException e) {
 				throw new RuntimeException(e);
 			} catch (Exception e) {
