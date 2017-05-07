@@ -1,4 +1,4 @@
-package com.zxhy.xjl.web.controller;
+package com.xjl.pt.web.controller;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -23,6 +23,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.context.WebApplicationContext;
+
+import com.xjl.pt.web.controller.BaseControllerTest;
 
 
 public class AControllerTest extends BaseControllerTest{

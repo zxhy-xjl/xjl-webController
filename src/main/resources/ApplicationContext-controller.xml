@@ -9,11 +9,11 @@
 						    http://www.springframework.org/schema/mvc   
 						    http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 
 	    <!-- 加载包中的controller  注解扫描包 -->  
-	    <context:component-scan base-package="com.zxhy.xjl"/>
+	    <context:component-scan base-package="com.xjl"/>
         <!-- 自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter -->  
         <mvc:annotation-driven/>
         <!--  -->
-		<bean  id="exceptionResolver" class="com.zxhy.xjl.web.controller.ExceptionHandler"></bean>
+		<bean  id="exceptionResolver" class="com.xjl.pt.web.controller.ExceptionHandler"></bean>
 		<bean id ="stringHttpMessageConverter" class ="org.springframework.http.converter.StringHttpMessageConverter"/>
     	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">      
             <property name="messageConverters">      

@@ -1,4 +1,4 @@
-package com.zxhy.xjl.web.controller;
+package com.xjl.pt.web.controller;
 
 
 import org.apache.commons.logging.Log;

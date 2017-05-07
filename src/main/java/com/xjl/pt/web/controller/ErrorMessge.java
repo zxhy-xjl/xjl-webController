@@ -1,4 +1,4 @@
-package com.zxhy.xjl.web.controller;
+package com.xjl.pt.web.controller;
 /**
  * 错误消息
  * @author leasonlive

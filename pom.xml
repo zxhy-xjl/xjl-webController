@@ -3,9 +3,9 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.zxhy.xjl</groupId>
+	<groupId>com.xjl</groupId>
 	<artifactId>xjl-webController</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>xjl-webController</name>
@@ -140,7 +140,7 @@
 	<distributionManagement>
 		<repository>
 			<id>user-releases</id>
-			<url>http://139.196.174.28:8081/nexus/content/repositories/releases</url>
+			<url>http://123.57.4.104:8081/nexus/content/repositories/releases</url>
 		</repository>
 	</distributionManagement>
 </project>
