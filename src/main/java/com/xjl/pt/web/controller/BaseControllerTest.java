@@ -26,8 +26,8 @@ public abstract class BaseControllerTest   {
 	MockHttpServletRequest request = new MockHttpServletRequest();  
     MockHttpServletResponse response = new MockHttpServletResponse();  
     private static MockMvc mockMvc;  
-    @Before  
-    public void setup() {  
+    @Before   
+    public void setup() {
         this.mockMvc = MockMvcBuilders.standaloneSetup(this.getController()).build();  
     }  
     public static String mockGet(String uri, String json){
